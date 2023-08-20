@@ -4,14 +4,14 @@ yarn install
 ```
 
 ## _app.js
-Changer la ligne 14, exemple par les reducer utilisés
+Changer la ligne 13, exemple par les reducer utilisés
 ```
 const reducers = combineReducers({ user, panier, ... });
 ```
 
-Changer la ligne 15, la key par le nom souhaiter afficher dans le localstorage
+Changer la ligne 14, la key par le nom souhaiter afficher dans le localstorage
 ```
-const persistConfig = { key: 'nomdelakeylocalstorage', storage };
+const persistConfig = { key: 'nomdelakeylocalstorage', storage, blacklist: ['_persist'] };
 ```
 
 ## utilisation
@@ -49,4 +49,14 @@ Pour les chemins il est possible
 ```
 
 ## Routes dynamiques
-Il y à 2 exemples de routes dynamiques, soit par id, ou par token.
+Il y a 2 exemples de routes dynamiques, soit par id, ou par token. entre crochet [id].js ou [token].js, ne doit pas être changé
+
+Pour l'id
+```
+pages > annonce > [id].js
+```
+
+Pour le token
+```
+pages > profil > [token].js
+```
