@@ -27,16 +27,17 @@ fortawesome
 @reduxjs/toolkit
 react-redux
 redux-persist
-react-helmet
 node-sass
 ```
 
-Pour changer dans une page le head ou ajouter une class au body simplement grace à react-helmet, il est possible de faire
+Pour changer dans une page le head ou ajouter une class au body simplement, il est possible de faire
 ```
- <Helmet>
-  <title>Titre</title>
-  <body className="nomdemaclass" />
-</Helmet>
+  useEffect(() => {
+    document.title = 'Titre de ma page' // changer le titre par celui souhaité
+    document.body.classList.add('nomdelaclassapp') // changer la class par celui souhaité
+
+    return
+  }, [])
 ```
 
 Pour les chemins il est possible

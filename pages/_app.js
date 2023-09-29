@@ -1,6 +1,6 @@
 import '@styles/globals.scss'
 
-import { Helmet } from 'react-helmet'
+import { useEffect } from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
@@ -21,16 +21,14 @@ const store = configureStore({
 const persistor = persistStore(store)
 
 function App({ Component, pageProps }) {
-  return (
-    <>
-      <Helmet>
-        <title>Yours</title>
-        <body className="yoursapp" />
-      </Helmet>
+  useEffect(() => {
+    document.title = 'Titre de ma page'
+    document.body.classList.add('nomdelaclassapp')
 
-      <Component {...pageProps} />
-    </>
-  )
+    return
+  }, [])
+
+  return <Component {...pageProps} />
 }
 
 export default function MyApp({ Component, pageProps }) {
